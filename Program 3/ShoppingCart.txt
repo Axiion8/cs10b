@@ -1,0 +1,30 @@
+#ifndef SHOPPINGCART_H
+#define SHOPPINGCART_H
+
+#include <vector>
+
+#include "ItemToPurchase.h"
+
+using namespace std;
+
+class ShoppingCart {
+    public:
+        ShoppingCart();
+        ShoppingCart(const string, const string);
+        string customerName() const;
+        string date() const;
+        void addItem(const ItemToPurchase&);
+        void removeItem(const string);
+        void modifyItem(const ItemToPurchase);
+        int numItemsInCart() const;
+        double costOfCart() const;
+        void printTotal() const;
+        void printDescriptions() const;
+    
+    private:
+        string _customerName;
+        string _currentDate;
+        vector <ItemToPurchase> _cartItems;
+};
+
+#endif

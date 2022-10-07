@@ -1,0 +1,17 @@
+#ifndef WIZARD_H
+#define WIZARD_H
+
+#include "Character.h"
+
+using namespace std;
+
+class Wizard : public Character{
+	private:
+		int rank;
+	public:
+		Wizard(const string& name, double hp, double atkStr, int rank);
+		int getRank();
+		void attack(Character& opponent) override;
+};
+
+#endif
